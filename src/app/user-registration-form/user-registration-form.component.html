@@ -1,4 +1,3 @@
-<p>user-registration-form works!</p>
 <mat-card>
   <mat-card-header>
     <mat-card-title>Sign up</mat-card-title>
@@ -6,7 +5,10 @@
   <mat-card-content>
     <form>
       <mat-form-field>
-        <input matInput [(ngModel)]="userData.Username" placeholder="Username" type="text" name="Username" required>
+        <input matInput [(ngModel)]="userData.UserName" placeholder="UserName" type="text" name="UserName" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [(ngModel)]="userData.Password" placeholder="Password" type="password" name="Password" required>
       </mat-form-field>
       <mat-form-field>
         <input matInput [(ngModel)]="userData.Email" placeholder="Email" type="email" name="Email" required>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
-import { MatDialog } from '@angular/material/dialog';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 
 @Component({
@@ -30,7 +30,7 @@ export class AppComponent {
     });
   }
 
-  //function that will open the dialog to show all movies
+  //function that will open all movies
   openMoviesDialog(): void {
     this.dialog.open(MovieCardComponent, {
       width: '500px'

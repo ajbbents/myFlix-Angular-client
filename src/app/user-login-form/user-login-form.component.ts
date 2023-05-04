@@ -28,12 +28,12 @@ export class UserLoginFormComponent implements OnInit {
       this.dialogRef.close();
       console.log(result);
       this.router.navigate(['movies']);
-      this.snackBar.open(result, 'ok', {
+      this.snackBar.open('successfully logged in', 'okay', {
         duration: 2000
       });
     }, (result) => {
       console.log(result);
-      this.snackBar.open(result, 'ok', {
+      this.snackBar.open(result, 'okay', {
         duration: 2000
       });
     });

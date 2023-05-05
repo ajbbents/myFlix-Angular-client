@@ -1,0 +1,33 @@
+$primary: #542537;
+$secondary: #6F734E;
+$tertiary: #dac9cf;
+$textColor: white;
+
+$bg-gradient: linear-gradient(#6f734e) 50%, (#6f734e67);
+
+.navbar {
+  background: $tertiary;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #444;
+  z-index: 900;
+  width: 100%;
+}
+
+.title {
+  background: $bg-gradient;
+  color: $primary;
+  border-bottom: 1px solid $tertiary;
+  margin: 0;
+  padding: 0.5rem;
+  border-bottom-right-radius: 50%;
+}
+
+@media all and (max-width: 300px) {
+  .navbar {
+    height: 45px;
+  }
+
+
+}

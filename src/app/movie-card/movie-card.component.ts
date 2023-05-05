@@ -12,7 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class MovieCardComponent implements OnInit {
   movies: any[] = [];
   constructor(
-    public fetchMovies: UserRegistrationService,
+    public fetchApiData: UserRegistrationService,
     public dialog: MatDialog,
     public snackBar: MatSnackBar) { }
 
@@ -21,7 +21,7 @@ export class MovieCardComponent implements OnInit {
   }
 
   getMovies(): void {
-    this.fetchMovies.getAllMovies().subscribe((resp: any) => {
+    this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
       console.log(this.movies);
       return this.movies;

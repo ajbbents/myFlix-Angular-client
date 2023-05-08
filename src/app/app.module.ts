@@ -25,6 +25,7 @@ import { DirectorComponent } from './director/director.component';
 import { DialogModule } from '@angular/cdk/dialog';
 import { GenreComponent } from './genre/genre.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { UserFavoriteMoviesComponent } from './user-favorite-movies/user-favorite-movies.component';
 
 //create routing
 const appRoutes: Routes = [
@@ -45,7 +46,8 @@ const appRoutes: Routes = [
     NavbarComponent,
     DirectorComponent,
     GenreComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    UserFavoriteMoviesComponent
   ],
   imports: [
     BrowserModule,

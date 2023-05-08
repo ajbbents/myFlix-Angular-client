@@ -23,6 +23,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DirectorComponent } from './director/director.component';
 import { DialogModule } from '@angular/cdk/dialog';
+import { GenreComponent } from './genre/genre.component';
 
 //create routing
 const appRoutes: Routes = [
@@ -41,7 +42,8 @@ const appRoutes: Routes = [
     WelcomePageComponent,
     UserProfileComponent,
     NavbarComponent,
-    DirectorComponent
+    DirectorComponent,
+    GenreComponent
   ],
   imports: [
     BrowserModule,

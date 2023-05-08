@@ -11,6 +11,10 @@ $tertiary: #dac9cf;
   row-gap: 1.65em;
 }
 
+h2 {
+  color: $primary;
+}
+
 .movie-card {
   margin-top: .35em;
   width: 30vw;
@@ -18,9 +22,9 @@ $tertiary: #dac9cf;
   justify-content: center;
 }
 
-.movie-card>img {
-  height: 70%;
-}
+// .movie-card>img {
+//   height: 70%;
+// }
 
 @media screen and (min-width: 250px) {
   .movie-view {

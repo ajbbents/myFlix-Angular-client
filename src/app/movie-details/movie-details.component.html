@@ -1,1 +1,12 @@
-<p>movie-details works!</p>
+<mat-card class="synopsis-dialog">
+  <button class="synopsis-close-button" mat-stroked-button aria-label="close synopsis details button" mat-dialog-close>
+    x
+  </button>
+  <mat-card-title>
+    <h3 class="synopsis-dialog-title">{{ data.Title }}</h3>
+  </mat-card-title>
+  <br />
+  <mat-dialog-content class="synopsis-dialog-content">
+    {{ data.Description }}
+  </mat-dialog-content>
+</mat-card>

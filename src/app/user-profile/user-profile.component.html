@@ -1,3 +1,4 @@
+<app-navbar />
 <div class="profile-page">
   <mat-card class="profile-card">
     <mat-card-header class="profile-card-header">
@@ -24,16 +25,16 @@
         <mat-form-field>
           <mat-label>birthday:</mat-label>
           <input matInput [(ngModel)]="updatedUser.Birthday"
-            value="{{ updatedUser.Birthday | date:'yyyy-mm-dd':'UTC+0' }}" type="date" name="Birthday" />
+            value="{{ updatedUser.Birthday | date:'mm-dd-yyyy':'UTC+0' }}" type="date" name="Birthday" />
         </mat-form-field>
       </form>
     </mat-card-content>
     <mat-card-actions class="user-profile-actions">
-      <button (click)="updateUserInfo()" color="secondary">
+      <button (click)="updateUserInfo()">
         <mat-icon>edit</mat-icon>
         update profile
       </button>
-      <button (click)="deleteUser()" color="warn">delete account</button>
+      <button (click)="deleteUser()">delete account</button>
     </mat-card-actions>
   </mat-card>
   <!-- <app-user-favorite-movies /> -->

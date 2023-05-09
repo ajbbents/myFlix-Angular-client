@@ -10,6 +10,13 @@ import { formatDate } from '@angular/common';
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.scss']
 })
+
+/**
+ * this component fetches user information from the API
+ * @user data is stored about the specific user
+ * @favorites stores an array of favorite movies from the user
+ * 
+ */
 export class UserProfileComponent implements OnInit {
   user: any = {};
   @Input() updatedUser = {
@@ -30,7 +37,10 @@ export class UserProfileComponent implements OnInit {
     this.getUserInfo();
   }
 
-  //fetch user's info with getUser
+  /**
+    * function makes the API call to get user info from the database
+    * @returns a JSON object with user information
+    */
   getUserInfo(): void {
     this.fetchApiData.getUser().subscribe((resp: any) => {
       this.user = resp;
@@ -41,7 +51,9 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
-  //update user's info with editUser
+  /**
+   * function makes the API call to update user information
+   */
   updateUserInfo(): void {
     this.fetchApiData.editUser(this.updatedUser).subscribe(result => {
       if (
@@ -62,7 +74,7 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
-  //delete user's account with deleteUser
+  /** function deletes user's account with deleteUser */
   deleteUser(): void {
     if (
       confirm('All of your info will be lost - there is no going back.')

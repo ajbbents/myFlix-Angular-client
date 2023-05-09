@@ -13,6 +13,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 
 export class UserFavoriteMoviesComponent implements OnInit {
+  /**
+ * variables manage the data received from the API calls 
+ * @favoriteMovies stores the specfic user's favorite movies
+ * @user stores the specific user's data
+ */
   favoriteMovies: any[] = [];
   user: any = {};
 
@@ -23,7 +28,6 @@ export class UserFavoriteMoviesComponent implements OnInit {
   ) { }
   ngOnInit(): void {
     this.getFavoriteMovies();
-    console.log(this.favoriteMovies);
   }
 
   /**
@@ -76,9 +80,9 @@ export class UserFavoriteMoviesComponent implements OnInit {
   }
 
   /**
-     * Opens dialog to display genre details
-     * @param name of specfic Genre
-     * @param description of specific Genre
+     * Opens dialog to display movie details
+     * @param title of movie
+     * @param description of movie
      */
   openSynopsis(title: string, description: string): void {
     this.dialog.open(MovieDetailsComponent, {
@@ -90,7 +94,11 @@ export class UserFavoriteMoviesComponent implements OnInit {
     });
   }
 
-  //open movie genre dialog
+  /**
+     * Opens dialog to display genre details
+     * @param name of specfic Genre
+     * @param description of specific Genre
+     */
   openGenre(name: string, description: string): void {
     this.dialog.open(GenreComponent, {
       data: {
@@ -101,7 +109,12 @@ export class UserFavoriteMoviesComponent implements OnInit {
     });
   }
 
-  //open movie director dialog
+  /**
+     * Opens dialog to display director details
+     * @param name of director
+     * @param bio of director
+     * @param birth of director
+     */
   openDirector(name: string, bio: string, birthday: string): void {
     this.dialog.open(DirectorComponent, {
       data: {

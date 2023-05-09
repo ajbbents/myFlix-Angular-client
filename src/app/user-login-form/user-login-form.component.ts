@@ -21,7 +21,11 @@ export class UserLoginFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  //function responsible for sending form inputs to API
+  /**
+   * function responsible for sending the form inputs to the backend
+   * If login is successful, user's data and token is stored in local storage
+   * Login form closes and user is taken to the list of all movies via the navigation router
+   */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((result) => {
       //logic for successful user login goes here
@@ -30,13 +34,11 @@ export class UserLoginFormComponent implements OnInit {
       localStorage.setItem('user', user);
       localStorage.setItem('token', token);
       this.dialogRef.close();
-      console.log(result);
       this.router.navigate(['movies']);
       this.snackBar.open('successfully logged in', 'okay', {
         duration: 2000
       });
     }, (result) => {
-      console.log(result);
       this.snackBar.open(result, 'okay', {
         duration: 2000
       });

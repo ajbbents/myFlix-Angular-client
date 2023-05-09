@@ -154,7 +154,11 @@ export class UserRegistrationService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  //edit user information/profile
+  /**
+  * Makes the API call to update an existing user's information
+  * @param updatedUser - the updated user information (UserName, Password, Email, Birthday)
+  * @returns - a JSON object holding data about the specific user
+  */
   public editUser(updatedUser: any): Observable<any> {
     const username = localStorage.getItem('user');
     const token = localStorage.getItem('token');
@@ -168,7 +172,10 @@ export class UserRegistrationService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  //deletes existing user
+  /**
+   * Makes the API call to delete a user's account
+   * @returns - message that the account was deleted
+   */
   public deleteUser(): Observable<any> {
     const username = localStorage.getItem('user');
     const token = localStorage.getItem('token');
@@ -182,7 +189,11 @@ export class UserRegistrationService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  //remove movie from array of user's favorite movies
+  /**
+   * Makes the API call to remove a movie from the user's favorote movies list
+   * @param movieId - the ID of the movie to be removed
+   * @returns - a JSON object holding data about the specific user
+   */
   public removeFavoriteMovie(movieId: string): Observable<any> {
     const username = localStorage.getItem('user');
     const token = localStorage.getItem('token');
@@ -196,11 +207,21 @@ export class UserRegistrationService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
+  /**
+  * Extracts the non-typed response data from the API calls
+  * @param res - response from the API call
+  * @returns - the response body or an empty JSON object if response body is null or undefined
+  */
   private extractResponseData(res: any): any {
     const body = res;
     return body || {};
   }
 
+  /**
+ * Handler for HTTP error responses
+ * @param error  - the HTTP error response object
+ * @returns - error message "Something bad happened; please try again later"
+ */
   private handleError(error: HttpErrorResponse): any {
     if (error.error instanceof ErrorEvent) {
       console.error('some error occurred:', error.error.message);

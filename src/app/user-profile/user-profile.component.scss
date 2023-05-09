@@ -7,17 +7,17 @@ $tertiary: #dac9cf;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 30rem;
-  margin: 15vh auto;
+  width: 35rem;
+  margin: 10px auto;
   padding: .75em;
   border-radius: 3px;
-  box-shadow: 0 .15em .5em #000400;
+  box-shadow: 0 .15em .5em $tertiary;
 }
 
 h2 {
   color: $primary;
   text-align: left;
-  margin: 15vh auto;
+  margin: 22px;
   margin-block: 2 5;
 }
 

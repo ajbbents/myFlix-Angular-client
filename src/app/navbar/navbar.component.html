@@ -1,11 +1,10 @@
 <div class="navbar">
-  <h1 class="title">hey, it's BingeableFilms</h1>
-  <button mat-raised-button (click)="toMovies()">movies</button>
-  <span></span>
-  <button mat-raised-button (click)="toProfile()">profile</button>
-  <span></span>
-  <button mat-raised-button (click)="logout()" class="logout-button">
-    <mat-icon>logout</mat-icon> logout
-  </button>
-  <span></span>
+  <div class="navbar-left">
+    <h1 class="title">hey, it's BingeableFilms</h1>
+  </div>
+  <div class="navbar-right">
+    <button mat-stroked-button (click)="toMovies()">movies</button>
+    <button mat-stroked-button (click)="toProfile()">profile</button>
+    <button mat-stroked-button (click)="logout()">logout</button>
+  </div>
 </div>

@@ -47,7 +47,11 @@ export class UserFavoriteMoviesComponent implements OnInit {
     return this.user.FavoriteMovies.includes(id);
   }
 
-  //adds movie to favorites
+  /**
+  * Adds movie to user's favorite movies list using the API call fetchApiData.addFavMovie()
+  * @function addToFavorites
+  * @param id of movie, type: string
+ */
   addToFavorites(id: string): void {
     this.fetchApiData.addFavoriteMovie(id).subscribe((result) => {
       this.snackBar.open('movie added to favorites', 'okay', {
@@ -57,7 +61,11 @@ export class UserFavoriteMoviesComponent implements OnInit {
     });
   }
 
-  //removes movie from favorites
+  /**
+    * Removes movie from user's favorite movies list using the API call fetchApiData.deleteFavMovie()
+    * @function removeFromFavorites
+    * @param id of movie, type: string
+  */
   removeFromFavorites(id: string): void {
     this.fetchApiData.removeFavoriteMovie(id).subscribe((result) => {
       this.snackBar.open('movie removed from favorites', 'okay', {
@@ -67,7 +75,11 @@ export class UserFavoriteMoviesComponent implements OnInit {
     });
   }
 
-  //open movie synopsis dialog
+  /**
+     * Opens dialog to display genre details
+     * @param name of specfic Genre
+     * @param description of specific Genre
+     */
   openSynopsis(title: string, description: string): void {
     this.dialog.open(MovieDetailsComponent, {
       data: {

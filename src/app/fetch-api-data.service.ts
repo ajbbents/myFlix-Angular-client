@@ -13,7 +13,11 @@ export class UserRegistrationService {
   //this'll provide HttpClient to the entire class, making it available via this.http
   constructor(private http: HttpClient) { }
 
-  //making the api call for the user registration endpoint
+  /**
+  * Makes the API call to register a new user
+  * @param userDetails - Username, Password, Email and Birthday are sent in the request body of the API call
+  * @returns - A JSON object holding data about the specific user
+  */
   public userRegistration(userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http.post(`${apiUrl}users`, userDetails).pipe(
@@ -21,7 +25,11 @@ export class UserRegistrationService {
     );
   }
 
-  // user login with username, password, credentials are authenticated
+  /**
+ * Makes the API call to login a user
+ * @param userDetails - Username and Password are sent in the request body of the API call
+ * @returns A JSON object holding data about the specific user
+ */
   public userLogin(userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http
@@ -30,7 +38,10 @@ export class UserRegistrationService {
       );
   }
 
-  //get JSON object of all movies
+  /**
+     * Makes the API call to get all movies
+     * @returns - an array of the full movie database as a JSON 
+     */
   public getAllMovies(): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
@@ -41,7 +52,11 @@ export class UserRegistrationService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  //get JSON object of movie by title
+  /**
+    * Makes the API call to get a movie by it's title
+    * @param title - the title of the movie to be fetched
+    * @returns - a JSON object holding data about the single movie
+    */
   public getMovie(title: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
@@ -53,7 +68,11 @@ export class UserRegistrationService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  //get JSON object of director by name
+  /**
+    * Makes the API call to get a director by name
+    * @param directorName - the director of the movie to be fetched
+    * @returns - a JSON object holding data about the director
+    */
   public getDirector(directorName: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
@@ -65,7 +84,11 @@ export class UserRegistrationService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  //get JSON object of genre by name
+  /**
+   * Makes the API call to get a genre by name
+   * @param genreName - the title of the movie to be fetched
+   * @returns - a JSON object holding data about the genre
+   */
   public getGenre(genreName: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
@@ -77,7 +100,10 @@ export class UserRegistrationService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  //get JSON object of user by username
+  /**
+    * Makes the API call to get a user by name
+    * @returns - a JSON object holding data about user
+    */
   public getUser(): Observable<any> {
     const username = localStorage.getItem('user');
     const token = localStorage.getItem('token');
@@ -90,7 +116,10 @@ export class UserRegistrationService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  //get array of favorite movies of one user
+  /**
+    * Makes the API call to get fav movies for a user
+    * @returns - an array with fav movies in JSON format
+    */
   public getFavoriteMovies(): Observable<any> {
     const username = localStorage.getItem('user');
     const token = localStorage.getItem('token');
@@ -106,12 +135,16 @@ export class UserRegistrationService {
         catchError(this.handleError));
   }
 
-  //add movie to array of user's favorite movies
+  /**
+   * Makes the API call to add a movie to the user's favorite movies list
+   * @param movieId - the ID of the movie to be added
+   * @returns - a JSON object holding data about the specific user
+   */
   public addFavoriteMovie(movieId: string): Observable<any> {
     const username = localStorage.getItem('user');
     const token = localStorage.getItem('token');
     return this.http
-      .put(`${apiUrl}users/${username}/movies/${movieId}`,
+      .post(`${apiUrl}users/${username}/movies/${movieId}`,
         { FavoriteMovie: movieId },
         {
           headers: new HttpHeaders({

@@ -1,15 +1,10 @@
 #<h1>MyFlixAngularClient</h1>
-<h2>React Native Mobile Chat App</h2>
-<p>A native chat app built with React Native for both Android and iOS devices, providing its users with a chat interface along with the option to take and share images, and location data and to store chat data both on and offline.</p>
 
 #<h2>Built using</h2>
 <ul>
   <li>Angular</li>
   <li>MongoDB Cloud</li>
   <li>Heroku</li>
-  <li>Android Studio</li>
-  <li>Google Firestore Database</li>
-  <li>JavaScript Mobile Development</li>
 </ul>
 
 #<h2>My Role</h2>

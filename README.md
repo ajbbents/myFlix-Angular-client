@@ -7,9 +7,6 @@
   <li>Heroku</li>
 </ul>
 
-#<h2>My Role</h2>
-Full-Stack Web Developer
-
 #<h2>Objective</h2>
 To create the client-side of an app called BingeableFilms based on an existing database and REST API. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
 
